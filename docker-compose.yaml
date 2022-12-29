@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  front:
+    build: ./
+    container_name: react
+    volumes:
+      - ./react_app:/usr/src/react_app
+    working_dir: /usr/src/react_app
+    command: npm start
+    ports:
+      - 3000:3000
+    tty: true
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
