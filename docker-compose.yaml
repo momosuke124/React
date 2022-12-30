@@ -7,7 +7,7 @@ services:
       - CHOKIDAR_USEPOLLING=true
     volumes:
       - ./:/usr/src/react_app
-    command: sh -c 'cd react_app && yarn start'
+    command: sh -c 'cd react_app && yarn install && yarn start'
     ports:
       - '4000:4000'
     tty: true
