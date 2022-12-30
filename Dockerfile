@@ -1,6 +1,4 @@
-FROM node:16.13.0-alpine3.12
-ENV NODE_VERSION 18.12.1
+FROM node:19-alpine3.16
+ENV LANG=C.UTF-8
+ENV TZ=Asia/Tokyo
 WORKDIR /usr/src/react_app
-COPY ./react_app /usr/src/react_app
-EXPOSE 3000
-ENV CI=true

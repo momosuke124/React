@@ -1,15 +1,13 @@
-version: "3.9"
+version: '3'
 services:
-  front:
-    build: ./
-    container_name: react
-    volumes:
-      - ./react_app:/usr/src/react_app
-    working_dir: /usr/src/react_app
-    command: npm start
-    ports:
-      - 3000:3000
-    tty: true
-    stdin_open: true
+  react_app:
+    build: .
     environment:
+      - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./:/usr/src/react_app
+    command: sh -c 'cd react_app && yarn start'
+    ports:
+      - '4000:4000'
+    tty: true
